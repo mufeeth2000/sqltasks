@@ -1,0 +1,71 @@
+1.Local table is accessed only by the creator
+  Global table can be accessed by other contexts
+---------------------------------------------------
+2.
+----------------------------------------------
+3. A trigger is enabled we cannot perform the DDL operations temporarily in the server
+   as well as the database.
+-----------------------------------------------------------------
+4.An identity is used to identify the starting point of the coloumn while inserting the values in table
+------------------------------------------------------------------------------------
+5.commit is an transaction it is used to save the values in table and rollback is used to stop the existing transaction and get backs to previous transaction.
+--------------------------------------------------------------------------------------------
+6.
+------------------------------------------------------------------------
+7. A join is used to combine two or more tables into a database
+   Types:
+        Inner Join
+	Outer JOin
+	Right Join
+	Left  Join
+	Self  Join
+        full  Join
+-------------------------------------------------------
+8.In table 1 a coloumn sid has some values and it is declared as a primary key and table 2  
+  did is a coloumn which contains the same values in sid then did is declaed as foreign key.
+  create table emp
+(
+EId int primary key,
+EName varchar (20) not null,
+Salary money,
+DNo int foreign key references dept (DId)
+)
+-------------------------------------------------------------------------------------
+9.
+Functions:
+  These are compiled statements.
+  Stored procedures cannot be called by using functions.
+  
+  
+  
+stored procedures:
+  These are pre compiled statements.
+  Functions can be called by using stored procedures.
+------------------------------------------------------------------------------------------------------
+10. A clusterd index is used to store more than one unique value or primary key in a table as a seprate index.
+
+---------------------------------------------------------------------------------------------------------
+Queries:
+1.select*into clone from worker
+2.SELECT CONCAT(FIRST_NAME,LAST_NAME)AS 'COMPLETE_NAME' FROM WORKER;
+3.select *from worker orderby FIRST_NAME asc
+4.select* from worker where salary between 100000 and 500000
+5.select *from worker orderby dept desc
+6.create trigger trgs
+  on title
+  for CREATE_TABLE,ALTER_TABLE,DROP_TABLE
+  AS
+	begin
+		print 'You cannot perform DDL Operations on SERVER'
+		rollback transaction 
+	end
+
+7.create function(@p+@n+@r)
+  return int 
+  as 
+     begin
+     return(@p*@n*@r)%100
+     end
+8.
+9.create index idx  bonusdate on bonus(bonus_date)
+10.
